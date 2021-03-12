@@ -1,3 +1,6 @@
+#https://www.runoob.com/linux/linux-shell-basic-operators.html
+
+
 echo "Hellow World !"
 
 your_name="qinjx"
