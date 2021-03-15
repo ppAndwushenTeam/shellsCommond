@@ -1,0 +1,22 @@
+//
+//  debug.config.xcconfig
+//  Shell_TestDemo
+//
+//  Created by liupenghui on 2021/3/15.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+MACH_PATH=${BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/${PRODUCT_NAME}
+CMD=nm -pa $MACHO_PATH
+TTY=/dev/ttys002
+
+//使用参数 和 在buildsetting设置  DEPLOYMENT_POSTPROCESSING = NO  和 strip type = debug symbols 一样
+//OTHER_LDFLAGS = -Xlinker -S
+
+//将导出符号进行隐藏 方式一
+//OTHER_LDFLAGS=$(inherited) -Xlinker -unexported_symbol -Xlinker _OBJC_CLASS_$_LGOneObject -Xlinker -unexported_symbol -Xlinker _OBJC_METACLASS_$_LGOneObject
+//将导出符号进行隐藏 方式二
+OTHER_LDFLAGS=$(inherited) -Xlinker -unexported_symbols_list symbol.txt
+
