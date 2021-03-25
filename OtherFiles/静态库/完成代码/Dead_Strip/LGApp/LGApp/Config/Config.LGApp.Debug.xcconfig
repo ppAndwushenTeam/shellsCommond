@@ -1,0 +1,5 @@
+// -Xlinker -all_load：不dead strip，加载全部代码
+// -Xlinker -ObjC：加载全部OC相关代码，包括分类
+// -force_load： 要加载那个静态库的全部代码
+LGSTATIC_FRAMEWORK_PATH=${BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LGStaticFramework.framework/LGStaticFramework
+OTHER_LDFLAGS=-Xlinker -force_load ${LGSTATIC_FRAMEWORK_PATH}

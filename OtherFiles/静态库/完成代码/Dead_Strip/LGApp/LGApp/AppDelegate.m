@@ -1,13 +1,11 @@
 //
 //  AppDelegate.m
-//  Shell_TestDemo
+//  LGApp
 //
-//  Created by liupenghui on 2021/3/13.
+//  Created by ws on 2021/1/20.
 //
 
 #import "AppDelegate.h"
-
-
 
 @interface AppDelegate ()
 
